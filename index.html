@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="UTF-8" >
+   <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+
+   <meta name="author" content="Parsa Farahani" >
+   <meta name="description" content="My Own CSS Moduls Library" >
+   <meta name="title" content="Opal" >
+   <title>Beluga CSS</title>
+   <link rel="icon" href="" type="image/x-icon">
+
+   <link rel="stylesheet" href="css/beluga.css">
+
+   <style>
+      .ct {
+         height: 400px;
+         border: 1px solid grey;
+         display: grid;
+         grid-template-columns: repeat(12, 1fr);
+         gap: 10px;
+         grid-auto-flow: column;
+         justify-content: center;
+      }
+      .c {
+         &:nth-child(1) {
+            background-color: rgb(124, 95, 255);
+         }
+
+         &:nth-child(2) {
+            background-color: dodgerblue;
+         }
+      }
+   </style>
+</head>
+<body>
+   <div class="ct">
+      <div class="c">Lorem, ipsum dolor.</div>
+      <div class="c">Lorem, ipsum.</div>
+   </div>
+   <article>
+      <div class="arrow">
+      </div>
+      <button class="bg-emerald bg-hover-emerald-fade-4 text-neutral-light-8 text-hover-amber-light-7 px-5 py-1 br-pill b-5 b-sky b-hover-black-fade-8 text-huge shadow-blue-fade-4 tr-500" type="button" disabled>
+         click me
+      </button>
+   </article>
+   <p class="bye-2 b-sky br">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, necessitatibus!</p>
+   <button class="py-1 px-2 br btn btn-outline-sky-light-2">
+      Button
+   </button>
+   <hr>
+   <div class="container">
+      <div class="row gap-x-5 justify-center align-center">
+         <div class="col-xs-12 col-md-6">
+            <div class=" bg-sky">Lorem ipsum dolor sit amet.</div>
+         </div>
+         <div class="col-xs-12 col-md-2">
+            <div class=" bg-sky">Lorem ipsum dolor sit amet.</div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

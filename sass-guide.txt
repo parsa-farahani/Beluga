@@ -1,0 +1,96 @@
+// string
+$str: "Hello Sass";
+
+@debug str-length($str);
+@debug str-slice($str, 3, 5);
+@debug str-insert($str, " Im Parsa", str-index($str, "ss") + 2);
+@debug str-index($str, "Sass");
+@debug to-lower-case($str);
+@debug to-upper-case($str);
+
+//num
+$n: 1.4;
+
+@debug round($n);
+@debug floor($n);
+@debug ceil($n);
+@debug max($n, 80, 0);
+@debug min($n, 80, 0);
+@debug abs($n * -10);
+@debug random( ceil($n) );
+@debug percentage($n);
+@debug comparable(40px, 4em);
+
+//list
+@function getLast($list) {
+   @return nth($list, length($list));
+}
+
+$list1: flex-start, flex-end, space-evenly;
+$list2: center, space-between;
+
+@debug length($list1);
+@debug index($list1, space-evenly);
+@debug nth($list1, 1);
+@debug set-nth($list1, 1, center);
+@debug append($list1, center);
+@debug join($list1, $list2);
+@debug list-separator(red gold green);
+
+$widths: 10px, 1px, 4px;
+$colors: red, black, gold;
+$styles: solid, dashed, dotted;
+
+@debug zip($widths, $styles, $colors);
+
+//map
+$map: (
+   "red": red,
+   "blue": dodgerblue,
+   "gold": gold,
+   "lime": lime,
+);
+
+@debug map-get($map, "blue");
+@debug map-merge($map, ("pink": rgb(10,51,26)));
+@debug map-remove($map, "lime");
+@debug map-has-key($map, "purple");
+@debug map-has-key($map, "blue");
+@debug map-keys($map);
+@debug map-values($map);
+
+// selectors
+@debug is-superselector("div", "div.arrow");
+@debug selector-append("div", ".col", "_12");
+@debug selector-nest("ul", "li", "div");
+@debug selector-parse("ul.cont.list#mylist");
+@debug selector-replace(".cont.list#mylist", ".cont", ".listyy");
+@debug selector-append(".cont", ".col", "#myElement");
+@debug selector-unify("div", ".span");
+@debug simple-selectors("ul.cont.list#mylist");
+
+// Introspection
+
+
+// colors
+
+@function getColor($color) {
+   $res: transparentize($color, 0.5);
+   @return $res;
+}
+
+button {
+   margin: 100px;
+   width: 140px;
+   height: 40px;
+
+   background-color: hsl(100, 80%, 50%);
+
+   &:hover {
+      background-color: getColor(hsl(100, 80%, 50%));
+   }
+
+
+}
+
+@debug hue(red);
